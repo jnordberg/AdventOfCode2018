@@ -13,3 +13,13 @@ Day 1
 Frequency: 420
 Repeating frequency: 227
 ```
+
+
+Day 2
+-----
+
+```
+» swift run day2 <Inputs/day2.txt
+Checksum: 5434
+Common letters: agimdjvlhedpsyoqfzuknpjwt
+```
