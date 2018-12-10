@@ -1,3 +1,4 @@
+import Foundation
 
 extension Dictionary where Value: Numeric {
     /// Increment numeric value for key, non-existing keys are treated as zero.
@@ -9,5 +10,15 @@ extension Dictionary where Value: Numeric {
             self[key] = step
         }
         return self[key]!
+    }
+}
+
+extension Character {
+    public var isUpperCase: Bool {
+        return CharacterSet.uppercaseLetters.contains(unicodeScalars.first!)
+    }
+
+    public var isLowerCase: Bool {
+        return CharacterSet.lowercaseLetters.contains(unicodeScalars.first!)
     }
 }

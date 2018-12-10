@@ -43,3 +43,13 @@ Day 4
 Strategy 1: 36898
 Strategy 2: 80711
 ```
+
+
+Day 5
+-----
+
+```
+» swift run day5 <Inputs/day5.txt
+Reacted polymer length: 11194
+Best polymer length: 4178
+```
