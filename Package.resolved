@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Regex",
+        "repositoryURL": "https://github.com/getGuaka/Regex.git",
+        "state": {
+          "branch": "master",
+          "revision": "6afffaeca7c5e72bb71320484fb364c5efc6bade",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}

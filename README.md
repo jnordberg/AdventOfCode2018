@@ -23,3 +23,13 @@ Day 2
 Checksum: 5434
 Common letters: agimdjvlhedpsyoqfzuknpjwt
 ```
+
+
+Day 3
+-----
+
+```
+» swift run day3 <Inputs/day3.txt
+Area of overlapping claims: 108961
+Non-overlapping claim: 681
+```
