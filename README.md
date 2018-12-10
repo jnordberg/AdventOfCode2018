@@ -33,3 +33,13 @@ Day 3
 Area of overlapping claims: 108961
 Non-overlapping claim: 681
 ```
+
+
+Day 4
+-----
+
+```
+» swift run day4 <Inputs/day4.txt
+Strategy 1: 36898
+Strategy 2: 80711
+```
