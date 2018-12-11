@@ -53,3 +53,13 @@ Day 5
 Reacted polymer length: 11194
 Best polymer length: 4178
 ```
+
+
+Day 6
+-----
+
+```
+» swift run day6 <Inputs/day6.txt
+Largest finite area: 3238
+Safe region area: 45046
+```

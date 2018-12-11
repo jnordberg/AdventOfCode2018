@@ -2,28 +2,6 @@ import Foundation
 import Regex
 import Utils
 
-struct Point: Hashable {
-    let x: Int
-    let y: Int
-}
-
-struct Size {
-    let width: Int
-    let height: Int
-}
-
-struct Rect {
-    let origin: Point
-    let size: Size
-    var cgRect: CGRect {
-        return CGRect(x: origin.x, y: origin.y, width: size.width, height: size.height)
-    }
-
-    func intersects(_ other: Rect) -> Bool {
-        return cgRect.intersects(other.cgRect)
-    }
-}
-
 struct Claim: Equatable {
     static let pattern = try! Regex(pattern: "^#([0-9]+) @ ([0-9]+),([0-9]+): ([0-9]+)x([0-9]+)$")
 
@@ -45,11 +23,8 @@ let claims = readLines().map { Claim($0) }
 
 var fabric = Dictionary<Point, Int>()
 for claim in claims {
-    let origin = claim.rect.origin, size = claim.rect.size
-    for x in origin.x ..< origin.x + size.width {
-        for y in origin.y ..< origin.y + size.height {
-            fabric.increment(Point(x: x, y: y))
-        }
+    for point in claim.rect.points {
+        fabric.increment(point)
     }
 }
 
