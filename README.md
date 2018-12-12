@@ -83,3 +83,13 @@ Day 8
 License 1: 40701
 License 2: 21399
 ```
+
+
+Day 9
+-----
+
+```
+» swift run day9 <Inputs/day9.txt
+First game: 423717
+Second game: 3553108197
+```
