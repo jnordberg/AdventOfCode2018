@@ -73,3 +73,13 @@ Day 7
 Assembly order: LAPFCRGHVZOTKWENBXIMSUDJQY
 Time to complete: 936
 ```
+
+
+Day 8
+-----
+
+```
+» swift run day8 <Inputs/day8.txt
+License 1: 40701
+License 2: 21399
+```
