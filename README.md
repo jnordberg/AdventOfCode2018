@@ -63,3 +63,13 @@ Day 6
 Largest finite area: 3238
 Safe region area: 45046
 ```
+
+
+Day 7
+-----
+
+```
+» swift run day7 <Inputs/day7.txt
+Assembly order: LAPFCRGHVZOTKWENBXIMSUDJQY
+Time to complete: 936
+```
