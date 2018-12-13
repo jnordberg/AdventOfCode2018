@@ -115,3 +115,13 @@ Message:
 
 Total seconds: 10227
 ```
+
+
+Day 11
+------
+
+```
+» swift run -c release day11 <Inputs/day11.txt
+Best 3x3 power level at: 21,77
+Best power level and size: 224,222,27
+```
