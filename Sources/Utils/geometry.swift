@@ -9,6 +9,11 @@ public struct Point: Hashable {
         self.y = y
     }
 
+    public init(_ x: Int, _ y: Int) {
+        self.x = x
+        self.y = y
+    }
+
     public init?(_ string: String) {
         let parts = string
             .split(separator: ",")
@@ -32,6 +37,16 @@ extension Point: CustomStringConvertible {
     }
 }
 
+extension Point {
+    public static func + (lhs: Point, rhs: Point) -> Point {
+        return Point(x: lhs.x + rhs.x, y: lhs.y + rhs.y)
+    }
+
+    public static func - (lhs: Point, rhs: Point) -> Point {
+        return Point(x: lhs.x - rhs.x, y: lhs.y - rhs.y)
+    }
+}
+
 extension Collection where Element == Point {
     public var boundingRect: Rect? {
         guard
@@ -47,6 +62,10 @@ extension Collection where Element == Point {
 public struct Size {
     public let width: Int
     public let height: Int
+
+    public var area: Int {
+        return width * height
+    }
 
     public init(width: Int, height: Int) {
         self.width = width
@@ -68,10 +87,14 @@ public struct Rect {
         size = Size(width: maxX - minX, height: maxY - minY)
     }
 
-    var minX: Int { return origin.x }
-    var minY: Int { return origin.y }
-    var maxX: Int { return origin.x + size.width }
-    var maxY: Int { return origin.y + size.height }
+    public var minX: Int { return origin.x }
+    public var minY: Int { return origin.y }
+    public var maxX: Int { return origin.x + size.width }
+    public var maxY: Int { return origin.y + size.height }
+
+    public var width: Int { return size.width }
+    public var height: Int { return size.height }
+    public var area: Int { return size.area }
 
     public var points: [Point] {
         var rv = Array<Point>()
