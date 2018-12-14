@@ -40,3 +40,9 @@ extension Sequence where Element: Comparable {
         return (min, max)
     }
 }
+
+extension Int {
+    public var digits: [Int] {
+        return String(self).map { Int(String($0))! }
+    }
+}

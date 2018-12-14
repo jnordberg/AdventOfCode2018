@@ -145,3 +145,13 @@ Day 13
 First crash at 63,102
 Last surviving cart is at: 16,134
 ```
+
+
+Day 14
+------
+
+```
+» swift run -c release day14 <Inputs/day14.txt
+Part 1: 5832873106
+Part 2: 20273708
+```
