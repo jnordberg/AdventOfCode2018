@@ -22,3 +22,21 @@ extension Character {
         return CharacterSet.lowercaseLetters.contains(unicodeScalars.first!)
     }
 }
+
+extension Sequence {
+    public func extent(by comparator: (Element, Element) -> Bool) -> (min: Element, max: Element)? {
+        guard let min = self.min(by: comparator), let max = self.max(by: comparator) else {
+            return nil
+        }
+        return (min, max)
+    }
+}
+
+extension Sequence where Element: Comparable {
+    public func extent() -> (min: Element, max: Element)? {
+        guard let min = self.min(), let max = self.max() else {
+            return nil
+        }
+        return (min, max)
+    }
+}

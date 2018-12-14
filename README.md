@@ -125,3 +125,13 @@ Day 11
 Best 3x3 power level at: 21,77
 Best power level and size: 224,222,27
 ```
+
+
+Day 12
+------
+
+```
+» swift run day12 <Inputs/day12.txt
+Result after 20 generations: 4217
+Result after 50 billion generations: 4550000002111
+```
