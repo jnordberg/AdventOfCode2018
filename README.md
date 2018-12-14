@@ -135,3 +135,13 @@ Day 12
 Result after 20 generations: 4217
 Result after 50 billion generations: 4550000002111
 ```
+
+
+Day 13
+------
+
+```
+» swift run day13 <Inputs/day13.txt
+First crash at 63,102
+Last surviving cart is at: 16,134
+```
