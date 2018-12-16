@@ -2,37 +2,6 @@ import Foundation
 import Regex
 import Utils
 
-struct Canvas<Pixel> {
-    let size: Size
-    var pixels: [Pixel]
-
-    init(_ size: Size, fill: Pixel) {
-        self.size = size
-        pixels = Array<Pixel>(repeating: fill, count: size.width * size.height)
-    }
-
-    func index(for pos: Point) -> Int {
-        return pos.y * size.width + pos.x
-    }
-
-    mutating func paint(at pos: Point, color: Pixel) {
-        pixels[index(for: pos)] = color
-    }
-}
-
-extension Canvas: CustomStringConvertible where Pixel == Bool {
-    var description: String {
-        var rv = ""
-        for (i, v) in pixels.enumerated() {
-            rv += v ? "#" : "."
-            if i % size.width == size.width - 1 {
-                rv += "\n"
-            }
-        }
-        return rv
-    }
-}
-
 struct Light {
     static let pattern = try! Regex(pattern: "^position=<(.*)> velocity=<(.*)>$")
 
@@ -71,13 +40,13 @@ extension Array where Element == Light {
         }
     }
 
-    func draw() -> Canvas<Bool> {
+    func draw() -> String {
         let bounds = positions.boundingRect!.inset(by: -1)
         var canvas = Canvas<Bool>(bounds.size, fill: false)
         for pos in positions {
             canvas.paint(at: pos - bounds.origin, color: true)
         }
-        return canvas
+        return canvas.ascii
     }
 }
 

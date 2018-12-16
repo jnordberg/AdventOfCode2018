@@ -1,6 +1,6 @@
 import Foundation
 
-public struct Point: Hashable {
+public struct Point: Hashable, Equatable {
     public let x: Int
     public let y: Int
 
@@ -59,12 +59,17 @@ extension Collection where Element == Point {
     }
 }
 
-public struct Size {
+public struct Size: Hashable, Equatable {
     public let width: Int
     public let height: Int
 
     public var area: Int {
         return width * height
+    }
+
+    public init(_ width: Int, _ height: Int) {
+        self.width = width
+        self.height = height
     }
 
     public init(width: Int, height: Int) {
@@ -73,7 +78,7 @@ public struct Size {
     }
 }
 
-public struct Rect {
+public struct Rect: Hashable, Equatable {
     public let origin: Point
     public let size: Size
 
@@ -84,7 +89,7 @@ public struct Rect {
 
     public init(minX: Int, minY: Int, maxX: Int, maxY: Int) {
         origin = Point(x: minX, y: minY)
-        size = Size(width: maxX - minX, height: maxY - minY)
+        size = Size(width: 1 + maxX - minX, height: 1 + maxY - minY)
     }
 
     public var minX: Int { return origin.x }
