@@ -20,6 +20,7 @@ let package = Package(
         .executable(name: "day13", targets: ["Day13"]),
         .executable(name: "day14", targets: ["Day14"]),
         .executable(name: "day15", targets: ["Day15"]),
+        .executable(name: "day16", targets: ["Day16"]),
     ],
     dependencies: [
         .package(url: "https://github.com/getGuaka/Regex.git", .branch("master")),
@@ -40,6 +41,7 @@ let package = Package(
         .target(name: "Day13", dependencies: ["Utils"]),
         .target(name: "Day14", dependencies: ["Utils"]),
         .target(name: "Day15", dependencies: ["Utils"]),
+        .target(name: "Day16", dependencies: ["Utils"]),
         .target(name: "Utils", dependencies: []),
     ]
 )

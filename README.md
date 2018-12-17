@@ -232,3 +232,13 @@ Part 2
 ################################
 Outcome: 66510
 ```
+
+
+Day 16
+------
+
+```
+» swift run day16 <Inputs/day16.txt
+Part 1: 614
+Part 2: 656
+```
