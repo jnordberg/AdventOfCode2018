@@ -1,8 +1,8 @@
 import Foundation
 
 public struct Point: Hashable, Equatable {
-    public let x: Int
-    public let y: Int
+    public var x: Int
+    public var y: Int
 
     public init(x: Int, y: Int) {
         self.x = x
@@ -44,6 +44,16 @@ extension Point {
 
     public static func - (lhs: Point, rhs: Point) -> Point {
         return Point(x: lhs.x - rhs.x, y: lhs.y - rhs.y)
+    }
+
+    public static func += (lhs: inout Point, rhs: Point) {
+        lhs.x += rhs.x
+        lhs.y += rhs.y
+    }
+
+    public static func -= (lhs: inout Point, rhs: Point) {
+        lhs.x -= rhs.x
+        lhs.y -= rhs.y
     }
 }
 
@@ -127,9 +137,13 @@ public struct Rect: Hashable, Equatable {
 
     /// Return a rect that is shrunk or expanded around its midpoint.
     public func inset(by delta: Int) -> Rect {
+        return inset(dx: delta, dy: delta)
+    }
+
+    public func inset(dx: Int, dy: Int) -> Rect {
         return Rect(
-            origin: Point(x: origin.x + delta, y: origin.y + delta),
-            size: Size(width: size.width - delta * 2, height: size.height - delta * 2)
+            origin: Point(x: origin.x + dx, y: origin.y + dy),
+            size: Size(width: size.width - dx * 2, height: size.height - dy * 2)
         )
     }
 }

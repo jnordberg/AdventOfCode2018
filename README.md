@@ -242,3 +242,13 @@ Day 16
 Part 1: 614
 Part 2: 656
 ```
+
+
+Day 17
+------
+
+```
+» swift run day17 <Inputs/day17.txt
+Water can reach 31158 tiles
+After draining 25419 tiles remain
+```
